@@ -1,6 +1,7 @@
 import { Buttons } from "./common/Buttons";
 import { Skills } from "./common/Skills";
 import "./UserCard.css";
+import PropTypes from "prop-types";
 
 export const UserCard = (props) => {
   const { skills } = props;
@@ -19,4 +20,13 @@ export const UserCard = (props) => {
       </div>
     </>
   );
+};
+
+UserCard.propType = {
+  name: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  job: PropTypes.string.isRequired,
+  profile: PropTypes.string.isRequired,
+  skills: PropTypes.arrayOf(PropTypes.string).isRequired,
+  online: PropTypes.bool.isRequired,
 };
